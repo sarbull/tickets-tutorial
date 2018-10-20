@@ -1,38 +1,39 @@
 <mat-toolbar color="primary" [class.mat-elevation-z2]="true">
   <button mat-button class="logo">
     <img src="https://material.angular.io/assets/img/homepage/angular-white-transparent.svg">
-    <span>Material</span>
   </button>
 
   <button mat-button>
-    Components
+    List Tickets
   </button>
   <button mat-button>
-    CDK
-  </button>
-  <button mat-button>
-    Guides
+    Add ticket
   </button>
 
-  <span class="fill-remaining-space"></span>
+  <span class="flex-spacer"></span>
 
   <button mat-button [matMenuTriggerFor]="menu">
-    7.0.0
+    <span>Cezar Sirbu</span>
     <mat-icon>arrow_drop_down</mat-icon>
   </button>
 
   <mat-menu #menu="matMenu">
-    <button mat-menu-item>5.2.5</button>
-    <button mat-menu-item>6.4.7</button>
-    <button mat-menu-item>7.0.0</button>
+    <button mat-menu-item>
+      <span>Profile</span>
+    </button>
+    <button mat-menu-item>
+      <span>Settings</span>
+    </button>
+    <button mat-menu-item>
+      <span>Logout</span>
+    </button>
   </mat-menu>
-
-  <button mat-icon-button>
-    <mat-icon>format_color_fill</mat-icon>
-  </button>
-
-  <button mat-button class="logo">
-    <img src="https://material.angular.io/assets/img/homepage/github-circle-white-transparent.svg"/>
-    GitHub
-  </button>
 </mat-toolbar>
+
+<section>
+  <div fxFlex="80" fxFlexOffset="10">
+    <div>
+      <h1>Some tab content</h1>
+    </div>
+  </div>
+</section>
