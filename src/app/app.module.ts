@@ -1,23 +1,35 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppComponent } from './app.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MaterialModule } from './material.module';
+import { StoreModule } from '@ngrx/store';
+
+import { AppContainer } from './app.container';
+import { MaterialModule } from './modules/material';
+import {
+  TicketsModule,
+  reducer as TicketsReducer
+} from './modules/tickets';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppContainer
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FlexLayoutModule,
     MaterialModule,
-    FlexLayoutModule
+    StoreModule.forRoot({
+      tickets: TicketsReducer
+    }),
+    TicketsModule
   ],
-  providers: [],
+  exports: [
+    AppContainer
+  ],
   bootstrap: [
-    AppComponent
+    AppContainer
   ]
 })
 export class AppModule { }

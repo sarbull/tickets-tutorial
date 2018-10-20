@@ -3,10 +3,10 @@
     <img src="https://material.angular.io/assets/img/homepage/angular-white-transparent.svg">
   </button>
 
-  <button mat-button>
+  <button mat-button (click)="setView('LIST_TICKETS')">
     List Tickets
   </button>
-  <button mat-button>
+  <button mat-button (click)="setView('ADD_TICKET')">
     Add ticket
   </button>
 
@@ -34,6 +34,14 @@
   <div fxFlex="80" fxFlexOffset="10">
     <div>
       <h1>Some tab content</h1>
+    </div>
+
+    <div *ngIf="state.view === 'LIST_TICKETS'">
+      <h2>List tickets</h2>
+    </div>
+
+    <div *ngIf="state.view === 'ADD_TICKET'">
+      <h2>Add ticket</h2>
     </div>
   </div>
 </section>
