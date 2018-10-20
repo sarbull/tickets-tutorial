@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "dapulse": {
+    "ticketsTutorial": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/dapulse",
+            "outputPath": "dist/ticketsTutorial",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -61,18 +61,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "dapulse:build"
+            "browserTarget": "ticketsTutorial:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "dapulse:build:production"
+              "browserTarget": "ticketsTutorial:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "dapulse:build"
+            "browserTarget": "ticketsTutorial:build"
           }
         },
         "test": {
@@ -106,7 +106,7 @@
         }
       }
     },
-    "dapulse-e2e": {
+    "ticketsTutorial-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -115,11 +115,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "dapulse:serve"
+            "devServerTarget": "ticketsTutorial:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "dapulse:serve:production"
+              "devServerTarget": "ticketsTutorial:serve:production"
             }
           }
         },
@@ -135,5 +135,5 @@
       }
     }
   },
-  "defaultProject": "dapulse"
+  "defaultProject": "ticketsTutorial"
 }
