@@ -1,0 +1,16 @@
+<h2>Create ticket</h2>
+<div>
+  <form [formGroup]="form"
+        (ngSubmit)="createTicket(form.value)"
+        fxLayout="column"
+        fxLayoutAlign="space-between start">
+    <mat-form-field>
+      <input formControlName="title" matInput placeholder="Title">
+      <mat-error *ngIf="form.get('title').invalid">
+        Title is required.
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button type="submit" [disabled]="!form.valid">Create ticket</button>
+  </form>
+</div>

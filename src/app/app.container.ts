@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { TicketsActions } from './modules/tickets';
 
 @Component({
   selector: 'app-container',
@@ -8,16 +10,38 @@ import { Component } from '@angular/core';
 export class AppContainer {
   state: any;
 
-  constructor() {
+  constructor(private store: Store<any>) {
     this.state = {
       view: 'HOME'
     };
   }
 
   setView(view: string) {
-    this.state = {
-      ...this.state,
-      view: view
-    };
+    const mapper = {
+      'HOME': () => {
+        this.state = {
+          ...this.state,
+          view: 'HOME'
+        };
+      },
+      'LIST_TICKETS': () => {
+        this.state = {
+          ...this.state,
+          view: 'LIST_TICKETS'
+        };
+
+        this.store.dispatch(new TicketsActions.SetView('LIST_TICKETS'));
+      },
+      'ADD_TICKET': () => {
+        this.state = {
+          ...this.state,
+          view: 'ADD_TICKET'
+        };
+
+        this.store.dispatch(new TicketsActions.SetView('ADD_TICKET'));
+      }
+    }
+
+    mapper[view]();
   }
 }

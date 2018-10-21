@@ -1,8 +1,8 @@
-<div *ngIf="view === 'LIST_TICKETS'">
+<div *ngIf="state.view === 'LIST_TICKETS'">
   <h2>List tickets</h2>
+  <app-tickets-list [tickets]="state.data"></app-tickets-list>
 </div>
 
-<div *ngIf="view === 'ADD_TICKET'">
-  <h2>Add ticket</h2>
-  <button mat-raised-button (click)="addTicket()" color="primary">Add ticket</button>
+<div *ngIf="state.view === 'ADD_TICKET'">
+  <app-ticket-create (ticket)="createTicket($event)"></app-ticket-create>
 </div>

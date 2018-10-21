@@ -1,6 +1,13 @@
 import { Action } from '@ngrx/store';
 import { Ticket } from './tickets.model';
 
+export const SET_VIEW       = '[Ticket] SET_VIEW';
+export class SetView implements Action {
+    readonly type = SET_VIEW;
+
+    constructor(public payload: string) {}
+}
+
 export const ADD       = '[Ticket] ADD';
 export class Add implements Action {
     readonly type = ADD;
@@ -15,4 +22,7 @@ export class Remove implements Action {
     constructor(public payload: number) {}
 }
 
-export type Actions = Add | Remove;
+export type Actions
+  = Add
+  | Remove
+  | SetView;
