@@ -28,7 +28,7 @@ const mapper = {
 
 export function reducer(state: TicketsState = initialState, action: any): TicketsState {
   if (mapper[action.type]) {
-    return mapper[action.type](state, action);
+    return mapper[action.type](state, action.payload);
   }
 
   console.warn(`${action.type} was not found!`);

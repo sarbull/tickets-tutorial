@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { TicketsState } from './tickets.model';
+import * as TicketActions from './tickets.actions';
+import { Ticket } from './index';
+
 
 @Component({
   selector: 'app-tickets-container',
@@ -18,5 +21,9 @@ export class TicketsContainer implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  addTicket() {
+    this.store.dispatch(new TicketActions.Add({id: 1, title: 'Ticket 1'}));
   }
 }
