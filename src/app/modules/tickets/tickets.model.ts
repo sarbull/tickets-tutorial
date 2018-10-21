@@ -1,5 +1,5 @@
 export interface TicketsState {
-  data: Ticket[]
+  data: Ticket[];
 }
 
 export interface TicketInterface {

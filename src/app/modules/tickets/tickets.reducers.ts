@@ -1,6 +1,6 @@
 
-import { Ticket, TicketsState } from './tickets.model'
-import * as TicketActions from './tickets.actions'
+import { Ticket, TicketsState } from './tickets.model';
+import * as TicketActions from './tickets.actions';
 
 const initialState: TicketsState = {
   data: []
@@ -24,7 +24,7 @@ const mapper = {
       ]
     };
   }
-}
+};
 
 export function reducer(state: TicketsState = initialState, action: any): TicketsState {
   if (mapper[action.type]) {
