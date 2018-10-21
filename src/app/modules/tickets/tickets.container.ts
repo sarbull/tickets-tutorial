@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { TicketsState } from './tickets.model';
 import * as TicketActions from './tickets.actions';
@@ -9,7 +9,7 @@ import { Ticket } from './tickets.model';
   templateUrl: './tickets.container.html',
   styleUrls: ['./tickets.container.scss']
 })
-export class TicketsContainer {
+export class TicketsContainer implements OnInit {
   state: TicketsState;
 
   constructor(private store: Store<TicketsState>) {
@@ -18,7 +18,7 @@ export class TicketsContainer {
   ngOnInit() {
     this.store.select('tickets').subscribe((data: TicketsState) => {
       this.state = data;
-    })
+    });
   }
 
   createTicket(ticket: Ticket) {

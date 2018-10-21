@@ -40,7 +40,7 @@ export class AppContainer {
 
         this.store.dispatch(new TicketsActions.SetView('ADD_TICKET'));
       }
-    }
+    };
 
     mapper[view]();
   }

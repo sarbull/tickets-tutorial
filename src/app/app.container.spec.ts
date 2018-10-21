@@ -2,13 +2,15 @@ import { TestBed, async } from '@angular/core/testing';
 import { AppContainer } from './app.container';
 import { CustomCommonModule } from './modules/common';
 import { TicketsModule } from './modules/tickets';
+import { StoreModule } from '@ngrx/store';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         CustomCommonModule,
-        TicketsModule
+        TicketsModule,
+        StoreModule.forRoot({})
       ],
       declarations: [
         AppContainer
