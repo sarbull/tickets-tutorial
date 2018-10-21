@@ -13,6 +13,7 @@ import {
 
 import { storeLogger } from 'ngrx-store-logger';
 import { environment } from '../environments/environment';
+import { CustomCommonModule } from './modules/common';
 
 export function logger(reducer: ActionReducer<any>): any {
   return storeLogger()(reducer);
@@ -25,10 +26,7 @@ export const metaReducers = environment.production ? [] : [logger];
     AppContainer
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    FlexLayoutModule,
-    MaterialModule,
+    CustomCommonModule,
     StoreModule.forRoot(
       {
         tickets: TicketsReducer
