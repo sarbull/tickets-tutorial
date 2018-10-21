@@ -9,5 +9,5 @@ import { Ticket } from '../../tickets.model';
 export class TicketsListComponent {
   @Input() tickets: Ticket[];
 
-  displayedColumns: string[] = ['title', 'options'];
+  displayedColumns: string[] = ['title', 'description', 'options'];
 }

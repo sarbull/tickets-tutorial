@@ -5,10 +5,17 @@
         fxLayout="column"
         fxLayoutAlign="space-between start">
     <mat-form-field>
-      <input formControlName="title" matInput placeholder="Title">
+      <input matInput placeholder="Title" formControlName="title" >
       <mat-error *ngIf="form.get('title').invalid">
         Title is required.
       </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Description" formControlName="description"></textarea>
+      <mat-error *ngIf="form.get('description').invalid">
+          Description is required.
+        </mat-error>
     </mat-form-field>
 
     <button mat-raised-button type="submit" [disabled]="!form.valid">Create ticket</button>

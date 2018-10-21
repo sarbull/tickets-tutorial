@@ -4,7 +4,13 @@ import * as TicketActions from './tickets.actions';
 
 const initialState: TicketsState = {
   view: 'LIST_TICKETS',
-  data: []
+  data: [
+    {
+      id: 1,
+      title: 'Ticket #1',
+      description: 'Lorem ipsum dolor.'
+    }
+  ]
 };
 
 const mapper = {

@@ -11,7 +11,8 @@ export class TicketCreateComponent {
   @Output() ticket: EventEmitter<Ticket> = new EventEmitter<Ticket>();
 
   form: FormGroup = new FormGroup({
-    title: new FormControl('', [Validators.required])
+    title: new FormControl('', [Validators.required]),
+    description: new FormControl('', [Validators.required])
   });
 
   createTicket(): void {
