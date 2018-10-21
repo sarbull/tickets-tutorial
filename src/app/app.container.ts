@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AppState } from './app.model';
 
 @Component({
   selector: 'app-container',
@@ -7,7 +6,7 @@ import { AppState } from './app.model';
   styleUrls: ['./app.container.scss']
 })
 export class AppContainer {
-  state: AppState;
+  state: any;
 
   constructor() {
     this.state = {

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { TicketState } from './tickets.model';
+import { Component, OnInit, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { TicketsState } from './tickets.model';
 
 @Component({
   selector: 'app-tickets-container',
@@ -8,18 +8,15 @@ import { Store } from '@ngrx/store';
   styleUrls: ['./tickets.container.scss']
 })
 export class TicketsContainer implements OnInit {
-  state: TicketState;
+  @Input() view: string;
+  state: any;
 
-  constructor(private store: Store<TicketState>) {
+  constructor(private store: Store<TicketsState>) {
     this.state = {
-      data: []
+      view: ''
     };
   }
 
   ngOnInit() {
-    this.store.select('tickets').subscribe((data: TicketState) => {
-
-    });
   }
-
 }

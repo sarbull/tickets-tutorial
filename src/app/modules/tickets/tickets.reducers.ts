@@ -1,13 +1,13 @@
 
-import { Ticket, TicketState } from './tickets.model'
+import { Ticket, TicketsState } from './tickets.model'
 import * as TicketActions from './tickets.actions'
 
-const initialState: TicketState = {
+const initialState: TicketsState = {
   data: []
 };
 
 const mapper = {
-  [TicketActions.ADD]: (state: TicketState, payload: Ticket): TicketState => {
+  [TicketActions.ADD]: (state: TicketsState, payload: Ticket): TicketsState => {
     return {
       ...state,
       data: [
@@ -16,7 +16,7 @@ const mapper = {
       ]
     };
   },
-  [TicketActions.REMOVE]: (state: TicketState, payload: number): TicketState => {
+  [TicketActions.REMOVE]: (state: TicketsState, payload: number): TicketsState => {
     return {
       ...state,
       data: [
@@ -26,12 +26,12 @@ const mapper = {
   }
 }
 
-export function reducer(state: TicketState = initialState, action: any): TicketState {
+export function reducer(state: TicketsState = initialState, action: any): TicketsState {
   if (mapper[action.type]) {
     return mapper[action.type](state, action);
   }
 
-  console.warn('${action.type} was not found!');
+  console.warn(`${action.type} was not found!`);
 
   return {
     ...state

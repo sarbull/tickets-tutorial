@@ -1,4 +1,4 @@
-export interface TicketState {
+export interface TicketsState {
   data: Ticket[]
 }
 

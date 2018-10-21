@@ -1,3 +1,7 @@
-<p>
-  tickets works!
-</p>
+<div *ngIf="view === 'LIST_TICKETS'">
+  <h2>List tickets</h2>
+</div>
+
+<div *ngIf="view === 'ADD_TICKET'">
+  <h2>Add ticket</h2>
+</div>

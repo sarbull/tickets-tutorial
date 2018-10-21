@@ -1,5 +1,5 @@
 <mat-toolbar color="primary" [class.mat-elevation-z2]="true">
-  <button mat-button class="logo">
+  <button mat-button class="logo" (click)="setView('HOME')">
     <img src="https://material.angular.io/assets/img/homepage/angular-white-transparent.svg">
   </button>
 
@@ -32,16 +32,12 @@
 
 <section>
   <div fxFlex="80" fxFlexOffset="10">
-    <div>
+    <div *ngIf="['HOME'].includes(state.view)">
       <h1>Some tab content</h1>
     </div>
 
-    <div *ngIf="state.view === 'LIST_TICKETS'">
-      <h2>List tickets</h2>
-    </div>
-
-    <div *ngIf="state.view === 'ADD_TICKET'">
-      <h2>Add ticket</h2>
+    <div *ngIf="['LIST_TICKETS', 'ADD_TICKET'].includes(state.view)">
+      <app-tickets-container [view]="state.view"></app-tickets-container>
     </div>
   </div>
 </section>
