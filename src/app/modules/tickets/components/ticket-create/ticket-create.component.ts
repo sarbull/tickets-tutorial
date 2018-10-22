@@ -16,6 +16,6 @@ export class TicketCreateComponent {
   });
 
   createTicket(): void {
-    this.ticket.emit(this.form.value);
+    this.ticket.emit(this.form.value); // {title: 'Title #1', description: 'lorem'}
   }
 }

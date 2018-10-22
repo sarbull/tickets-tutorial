@@ -22,7 +22,23 @@ export class Remove implements Action {
     constructor(public payload: number) {}
 }
 
+export const SAVE    = '[Ticket] Save';
+export class Save implements Action {
+    readonly type = SAVE;
+
+    constructor(public payload: Ticket) {}
+}
+
+export const SET_SELECTED    = '[Ticket] SET_SELECTED';
+export class SetSelected implements Action {
+    readonly type = SET_SELECTED;
+
+    constructor(public payload: Ticket) {}
+}
+
 export type Actions
   = Add
   | Remove
-  | SetView;
+  | SetView
+  | Save
+  | SetSelected;

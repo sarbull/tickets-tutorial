@@ -3,6 +3,7 @@ import { Ticket, TicketsState } from './tickets.model';
 import * as TicketActions from './tickets.actions';
 
 const initialState: TicketsState = {
+  selected: null,
   view: 'LIST_TICKETS',
   data: [
     {
@@ -20,6 +21,13 @@ const mapper = {
       view: payload,
     };
   },
+  [TicketActions.SAVE]: (state: TicketsState, payload: Ticket | any): TicketsState => {
+    return {
+      ...state,
+      view: 'LIST_TICKETS',
+      data: []
+    };
+  },
   [TicketActions.ADD]: (state: TicketsState, payload: Ticket | any): TicketsState => {
     return {
       ...state,
@@ -31,11 +39,20 @@ const mapper = {
     };
   },
   [TicketActions.REMOVE]: (state: TicketsState, payload: number | any): TicketsState => {
+
     return {
       ...state,
       data: [
         ...state.data.filter(t => t.id !== payload)
       ]
+    };
+  },
+  [TicketActions.SET_SELECTED]: (state: TicketsState, payload: Ticket | any): TicketsState => {
+
+    return {
+      ...state,
+      view: 'SET_SELECTED',
+      selected: payload
     };
   }
 };

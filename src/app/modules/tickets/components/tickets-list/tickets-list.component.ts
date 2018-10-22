@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Ticket } from '../../tickets.model';
 
 @Component({
@@ -8,6 +8,16 @@ import { Ticket } from '../../tickets.model';
 })
 export class TicketsListComponent {
   @Input() tickets: Ticket[];
+  @Output() delete: EventEmitter<number> = new EventEmitter<number>();
+  @Output() edit: EventEmitter<Ticket> = new EventEmitter<Ticket>();
 
   displayedColumns: string[] = ['title', 'description', 'options'];
+
+  onDelete(id: number) {
+    this.delete.emit(id);
+  }
+
+  onEdit(t: Ticket) {
+    this.edit.emit(t);
+  }
 }

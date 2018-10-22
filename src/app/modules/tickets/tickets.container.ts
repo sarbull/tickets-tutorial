@@ -12,12 +12,25 @@ import { Observable } from 'rxjs';
   styleUrls: ['./tickets.container.scss']
 })
 export class TicketsContainer {
-  tickets$: Observable<TicketsState> = this.store.select('ticketsModule').pipe(map(data => data.tickets));
+  tickets$: Observable<TicketsState> = this.store.select('ticketsModule')
+                                        .pipe(map(data => data.tickets));
 
   constructor(private store: Store<TicketsState>) {
   }
 
+  onEdit(ticket: Ticket) {
+    this.store.dispatch(new TicketActions.SetSelected(ticket));
+  }
+
   createTicket(ticket: Ticket) {
+    this.store.dispatch(new TicketActions.Add(ticket));
+  }
+
+  onDelete(id: number) {
+    this.store.dispatch(new TicketActions.Remove(id));
+  }
+
+  onSave(ticket: Ticket) {
     this.store.dispatch(new TicketActions.Add(ticket));
   }
 }

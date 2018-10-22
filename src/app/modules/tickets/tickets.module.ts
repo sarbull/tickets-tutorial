@@ -6,13 +6,15 @@ import { TicketCreateComponent } from './components/ticket-create/ticket-create.
 import { TicketsListComponent } from './components/tickets-list/tickets-list.component';
 import { StoreModule } from '@ngrx/store';
 import { reducer as TicketsReducer } from './tickets.reducers';
+import { TicketEditComponent } from './components/ticket-edit/ticket-edit.component';
 
 @NgModule({
   declarations: [
     TicketsContainer,
     TicketDetailsComponent, // will this be used outside of the tickets container/module? no.
     TicketCreateComponent,
-    TicketsListComponent
+    TicketsListComponent,
+    TicketEditComponent
   ],
   imports: [
     CustomCommonModule,

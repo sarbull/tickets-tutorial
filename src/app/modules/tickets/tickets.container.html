@@ -1,8 +1,15 @@
 <div *ngIf="(tickets$ | async).view === 'LIST_TICKETS'">
   <h2>List tickets</h2>
-  <app-tickets-list [tickets]="(tickets$ | async).data"></app-tickets-list>
+  <app-tickets-list [tickets]="(tickets$ | async).data"
+                    (edit)="onEdit($event)"
+                    (delete)="onDelete($event)"></app-tickets-list>
 </div>
 
 <div *ngIf="(tickets$ | async).view === 'ADD_TICKET'">
   <app-ticket-create (ticket)="createTicket($event)"></app-ticket-create>
+</div>
+
+<div *ngIf="(tickets$ | async).view === 'SET_SELECTED'">
+  <app-ticket-edit [selected]="(tickets$ | async).selected"
+                   (ticket)="onSave($event)"></app-ticket-edit>
 </div>

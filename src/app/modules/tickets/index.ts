@@ -7,12 +7,13 @@ import * as TicketsActions from './tickets.actions';
 import { TicketDetailsComponent } from './components/ticket-details/ticket-details.component';
 import { TicketCreateComponent } from './components/ticket-create/ticket-create.component';
 import { TicketsListComponent } from './components/tickets-list/tickets-list.component';
-
+import { TicketEditComponent } from './components/ticket-edit/ticket-edit.component';
 export {
   TicketsContainer,
   TicketDetailsComponent,
   TicketCreateComponent,
   TicketsListComponent,
+  TicketEditComponent,
   TicketsModule,
   TicketsActions,
   reducer,

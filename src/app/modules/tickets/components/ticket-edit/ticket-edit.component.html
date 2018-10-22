@@ -1,7 +1,7 @@
-<h2>Create ticket</h2>
+<h2>Edit ticket</h2>
 <div>
   <form [formGroup]="form"
-        (ngSubmit)="createTicket()"
+        (ngSubmit)="updateTicket()"
 
         fxLayout="column"
         fxLayoutAlign="space-between start">
@@ -19,6 +19,6 @@
         </mat-error>
     </mat-form-field>
 
-    <button mat-raised-button type="submit" [disabled]="!form.valid">Create ticket</button>
+    <button mat-raised-button type="submit" [disabled]="!form.valid">Save ticket</button>
   </form>
 </div>

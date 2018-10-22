@@ -1,4 +1,5 @@
 export interface TicketsState {
+  selected: Ticket;
   view: string;
   data: Ticket[];
 }
