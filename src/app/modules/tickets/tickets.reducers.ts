@@ -31,8 +31,8 @@ const mapper = {
             return {
               ...t,
               ...payload
-            }
-          };
+            };
+          }
 
           return t;
         })
