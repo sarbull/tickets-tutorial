@@ -32,7 +32,7 @@ const mapper = {
               ...t,
               ...payload
             }
-          }
+          };
 
           return t;
         })
