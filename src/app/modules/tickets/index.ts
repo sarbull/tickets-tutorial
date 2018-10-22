@@ -8,7 +8,6 @@ import { TicketDetailsComponent } from './components/ticket-details/ticket-detai
 import { TicketCreateComponent } from './components/ticket-create/ticket-create.component';
 import { TicketsListComponent } from './components/tickets-list/tickets-list.component';
 
-
 export {
   TicketsContainer,
   TicketDetailsComponent,

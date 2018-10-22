@@ -1,24 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { map } from 'rxjs/operators';
 import { TicketsState } from './tickets.model';
 import * as TicketActions from './tickets.actions';
 import { Ticket } from './tickets.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-tickets-container',
   templateUrl: './tickets.container.html',
   styleUrls: ['./tickets.container.scss']
 })
-export class TicketsContainer implements OnInit {
-  state: TicketsState;
+export class TicketsContainer {
+  tickets$: Observable<TicketsState> = this.store.select('ticketsModule').pipe(map(data => data.tickets));
 
   constructor(private store: Store<TicketsState>) {
-  }
-
-  ngOnInit() {
-    this.store.select('tickets').subscribe((data: TicketsState) => {
-      this.state = data;
-    });
   }
 
   createTicket(ticket: Ticket) {

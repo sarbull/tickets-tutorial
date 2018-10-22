@@ -1,8 +1,8 @@
-<div *ngIf="state.view === 'LIST_TICKETS'">
+<div *ngIf="(tickets$ | async).view === 'LIST_TICKETS'">
   <h2>List tickets</h2>
-  <app-tickets-list [tickets]="state.data"></app-tickets-list>
+  <app-tickets-list [tickets]="(tickets$ | async).data"></app-tickets-list>
 </div>
 
-<div *ngIf="state.view === 'ADD_TICKET'">
+<div *ngIf="(tickets$ | async).view === 'ADD_TICKET'">
   <app-ticket-create (ticket)="createTicket($event)"></app-ticket-create>
 </div>
