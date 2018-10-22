@@ -31,6 +31,6 @@ export class TicketsContainer {
   }
 
   onSave(ticket: Ticket) {
-    this.store.dispatch(new TicketActions.Add(ticket));
+    this.store.dispatch(new TicketActions.Save(ticket));
   }
 }

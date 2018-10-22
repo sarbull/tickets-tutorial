@@ -25,7 +25,18 @@ const mapper = {
     return {
       ...state,
       view: 'LIST_TICKETS',
-      data: []
+      data: [
+        ...state.data.map(t => {
+          if (t.id === payload.id) {
+            return {
+              ...t,
+              ...payload
+            }
+          }
+
+          return t;
+        })
+      ]
     };
   },
   [TicketActions.ADD]: (state: TicketsState, payload: Ticket | any): TicketsState => {
